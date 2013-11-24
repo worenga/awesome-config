@@ -12,7 +12,7 @@ local capi = { screen = screen }
 module("freedesktop.desktop")
 
 local current_pos = {}
-local iconsize = { width = 48, height = 48 }
+local iconsize = { width = 16, height = 16 }
 local labelsize = { width = 130, height = 20 }
 local margin = { x = 20, y = 20 }
 

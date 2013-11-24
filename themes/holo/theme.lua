@@ -9,9 +9,9 @@ theme                               = {}
 
 theme.icon_dir                      = os.getenv("HOME") .. "/.config/awesome/themes/holo/icons"
 
-theme.wallpaper                     = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.png"
+theme.wallpaper                     = os.getenv("HOME") .. "/wallpaper/the-dark-days-are-over-1920x1080.jpg"
 
-theme.topbar_path                   = "png:" .. theme.icon_dir .. "/topbar/"
+-- theme.topbar_path                   = "png:" .. theme.icon_dir .. "/topbar/"
 
 theme.font                          = "Tamsyn 10.5"
 theme.taglist_font                  = "Tamsyn 8"
@@ -83,7 +83,7 @@ theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
 
 -- lain related
-theme.useless_gap_width             = 10
+theme.useless_gap_width             = 0
 theme.layout_uselesstile            = theme.icon_dir .. "/uselesstile.png"
 theme.layout_uselesstileleft        = theme.icon_dir .. "/uselesstileleft.png"
 theme.layout_uselesstiletop         = theme.icon_dir .. "/uselesstiletop.png"
