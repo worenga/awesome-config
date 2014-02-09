@@ -50,22 +50,25 @@ function run_once(cmd)
 end
 
 local lockerapp = "i3lock -i /home/bewo/wallpaper/the-dark-days-are-over-1920x1080.png"
-
+local notifyapp = "notify-send --urgency=critical \"Inactivity detected, Lockscreen in 60 secs.\""
 run_once("unclutter")
 
 run_once("compton")
 -- runonce.run("google-chrome")
 runonce.run("/usr/bin/jupiter")
 runonce.run("setxkbmap us")
-runonce.run("xautolock -time 5 -locker '" .. lockerapp .. "'");
+runonce.run("xautolock -corners ---- -notify 60 -notifier '" .. notifyapp .. "' -time 5 -locker '" .. lockerapp .. "'");
 runonce.run("pacmanfm --desktop --profile lubuntu")
-runonce.run('mopidy')
-runonce.run('gmpc -h')
-runonce.run("pidgin")
-run_once("xpad -h")
+-- runonce.run('mopidy')
+-- runonce.run('gmpc -h')
+runonce.run("psi")
+runonce.run("samsung-tools -n")
+runonce.run("clipit")
+runonce.run("xpad -h")
 runonce.run("wicd-client")
 runonce.run("/usr/lib/jupiter/scripts/jupiter")
 runonce.run("sh /home/bewo/Scripts/redshift.sh")
+runonce.run("sh /home/bewo/Scripts/adjustmousespeed_real.sh")
 runonce.run("ssh-agent")
 runonce.run("blueman-applet")
 runonce.run("xfce4-power-manager")
@@ -595,10 +598,11 @@ globalkeys = awful.util.table.join(
   -- Keyboard Brightness 
 
   awful.key({         }, "XF86KbdBrightnessUp", function()
-      myvolumebar.notify()
+      os.execute('notify-send "Keyboard Backlight Brightness $(cat /sys/class/leds/samsung\:\:kbd_backlight/brightness)/$(cat /sys/class/leds/samsung\:\:kbd_backlight/max_brightness)"')
       os.execute("kbbrightness inc", false)
     end),
   awful.key({         }, "XF86KbdBrightnessDown", function()
+      os.execute('notify-send "Keyboard Backlight Brightness $(cat /sys/class/leds/samsung\:\:kbd_backlight/brightness)/$(cat /sys/class/leds/samsung\:\:kbd_backlight/max_brightness)"')
       os.execute("kbbrightness dec", false)
     end),
 
